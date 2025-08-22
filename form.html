@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add Student Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .navbar-logo {
+            width: 45px;
+            height: 50px;
+        }
+        
+        .form-container {
+            background: linear-gradient(135deg, #f8f8f8 0%, #f1f0f1 100%);
+            min-height: calc(100vh - 76px);
+            padding: 40px 0;
+        }
+        
+        .form-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+        
+        .profile-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .profile-placeholder {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e9e9e9 0%, #e4e4e4 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 4rem;
+        }
+        
+        .upload-btn {
+            background: linear-gradient(135deg, #667eea 0%, #d6d6d6 100%);
+            border: none;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+        }
+        
+        .upload-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .form-section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #764ba2;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f8f9fa;
+        }
+        
+        .form-control, .form-select {
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 12px 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        }
+        
+        .form-label {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .form-check-input:checked {
+            background-color: #667eea;
+            border-color: #667eea;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #c2c2c7 0%, #b4b1b1 100%);
+            border: none;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            width: 200px;
+            transition: all 0.3s ease;
+        }
+        
+        
+        
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <img src="DCTLogo2.png" style="width: 45px; height: 50px;" alt="Logo" class="navbar-logo">
+            <a class="navbar-brand fs-4 px-2" href="#">{Group 11}</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="students.html">Student</a></li>
+                    <li class="nav-item"><a class="nav-link" href="attendance.html">Attendance</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="form.html">Form</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    
+    <div class="form-container">
+        <div class="container">
+            <div class="form-card">
+                <h1 class="text-center mb-4" style="color: #764ba2; font-weight: 700;">Add Student Form</h1>
+                
+                <form id="studentForm">
+                    <!-- Profile Section -->
+                    <div class="profile-section">
+                        <div class="profile-placeholder">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <button type="button" class="btn upload-btn">
+                            <i class="fas fa-camera me-2"></i>Choose File
+                        </button>
+                        <div class="mt-2 text-muted">No File Chosen</div>
+                    </div>
+
+                    <!-- Personal Information -->
+                    <div class="form-section">
+                        <h3 class="section-title">Personal Information</h3>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">Last Name <span class="required">*</span></label>
+                                <input type="text" class="form-control" placeholder="ex. Doe" required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">First Name <span class="required">*</span></label>
+                                <input type="text" class="form-control" placeholder="ex. John" required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">Middle Name</label>
+                                <input type="text" class="form-control" placeholder="ex. Smith">
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Gender <span class="required">*</span></label>
+                                <div class="radio-group mt-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
+                                        <label class="form-check-label" for="male">Male</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender" id="female" value="female" required>
+                                        <label class="form-check-label" for="female">Female</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Civil Status <span class="required">*</span></label>
+                                <select class="form-select" required>
+                                    <option value="">Select</option>
+                                    <option value="single">Single</option>
+                                    <option value="married">Married</option>
+                                    <option value="divorced">Divorced</option>
+                                    <option value="widowed">Widowed</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Date of Birth <span class="required">*</span></label>
+                                <input type="date" class="form-control" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Place of Birth <span class="required">*</span></label>
+                                <input type="text" class="form-control" placeholder="ex. Baguio City" required>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Nationality <span class="required">*</span></label>
+                                <input type="text" class="form-control" placeholder="ex. Filipino" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Religion <span class="required">*</span></label>
+                                <select class="form-select" required>
+                                    <option value="">Select</option>
+                                    <option value="roman-catholic">Roman Catholic</option>
+                                    <option value="protestant">Protestant</option>
+                                    <option value="islam">Islam</option>
+                                    <option value="buddhist">Buddhist</option>
+                                    <option value="others">Others</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="form-section">
+                        <h3 class="section-title">Contact Information</h3>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Contact No. <span class="required">*</span></label>
+                                <input type="tel" class="form-control" placeholder="09XXXXXXXXX" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Email <span class="required">*</span></label>
+                                <input type="email" class="form-control" placeholder="user@domain.com" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Home Address <span class="required">*</span></label>
+                            <input type="text" class="form-control" placeholder="Street Address" required>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">Barangay <span class="required">*</span></label>
+                                <input type="text" class="form-control" placeholder="ex. 123 Barangay" required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">City <span class="required">*</span></label>
+                                <input type="text" class="form-control" placeholder="ex. Baguio" required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">Province <span class="required">*</span></label>
+                                <input type="text" class="form-control" placeholder="ex. Benguet" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Contact -->
+                    <div class="form-section">
+                        <h3 class="section-title">Emergency Contact</h3>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Emergency Contact Person <span class="required">*</span></label>
+                                <input type="text" class="form-control" placeholder="Full Name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Contact No. <span class="required">*</span></label>
+                                <input type="tel" class="form-control" placeholder="09XXXXXXXXX" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center mt-5">
+                        <button type="submit" class="btn submit-btn">
+                            <i class="fas fa-user-plus me-2"></i>Add Student
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Form validation and submission
+        document.getElementById('studentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic form validation
+            const requiredFields = this.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.classList.add('is-invalid');
+                    isValid = false;
+                } else {
+                    field.classList.remove('is-invalid');
+                }
+            });
+            
+            if (isValid) {
+                // Simulate form submission
+                const submitBtn = this.querySelector('.submit-btn');
+                const originalText = submitBtn.innerHTML;
+                
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Adding Student...';
+                submitBtn.disabled = true;
+                
+                setTimeout(() => {
+                    alert('Student added successfully!');
+                    this.reset();
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, 2000);
+            }
+        });
+
+        // File upload placeholder
+        document.querySelector('.upload-btn').addEventListener('click', function() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = function(e) {
+                if (e.target.files.length > 0) {
+                    document.querySelector('.profile-section .text-muted').textContent = e.target.files[0].name;
+                }
+            };
+            input.click();
+        });
+    </script>
+</body>
+</html>
